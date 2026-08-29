@@ -1,0 +1,17 @@
+flowchart TB
+    CPU["Processador (núcleo)"]
+    L1["Cache L1<br/>menor · mais rápida · exclusiva do núcleo"]
+    L2["Cache L2<br/>maior · um pouco mais lenta · exclusiva do núcleo"]
+    L3["Cache L3<br/>a maior · compartilhada entre os núcleos"]
+    RAM["Memória RAM"]
+
+    CPU -->|cache miss| L1
+    L1 -->|cache miss| L2
+    L2 -->|cache miss| L3
+    L3 -->|cache miss| RAM
+
+    style CPU fill:#4e79a7,color:#fff,stroke:#2c4a6e
+    style L1 fill:#59a14f,color:#fff,stroke:#356030
+    style L2 fill:#76b947,color:#fff,stroke:#4a7a2a
+    style L3 fill:#f1ce63,color:#333,stroke:#b89b2e
+    style RAM fill:#e15759,color:#fff,stroke:#9c3638

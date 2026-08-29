@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-	<meta name="generator" content="Hugo 0.147.7">
+	<meta name="generator" content="Hugo 0.160.1">
     <meta charset="utf-8">
 <title>Memórias</title>
 
@@ -33,26 +33,39 @@
 <p>Relembrar os diferentes tipos de memórias usadas num computador;</p>
 <p>Conhecer as diversas tecnologias relacionadas a natureza das memórias para provê o correto uso e especificação</p>
 </section><section>
-<h1 id="sumário">Sumário</h1>
-<p>Características do armazenamento primário e secundário</p>
-<p>Hierarquia de memórias</p>
-<p>Segurança e Dados</p>
-<p>Unidade de armazenamento</p>
-<p>Memória secundária</p>
+<h1 id="índice">Índice</h1>
+<p>Toda memória se encaixa numa pirâmide de hierarquia — três frentes:</p>
+<div style="display:flex; justify-content:space-around; text-align:left; font-size:0.55em; gap:1.5em; margin-top:1em;">
+<div>
+<h3 id="-memória-unificada">🚀 Memória Unificada</h3>
+<p><em>(destaque desta turma)</em></p>
 <ul>
-<li>
-<p>Disco rígido</p>
-</li>
-<li>
-<p>Memória Flash</p>
-</li>
-<li>
-<p>Mídias óticas</p>
-</li>
-<li>
-<p>Nuvem</p>
-</li>
+<li>Tendência: Apple, AMD, NVIDIA</li>
+<li>Largura de banda</li>
+<li>DGX Spark, Strix Halo</li>
 </ul>
+</div>
+<div>
+<h3 id="-memória-primária">💾 Memória Primária</h3>
+<ul>
+<li>Célula: SRAM, DRAM, SDRAM</li>
+<li>DDR3 / DDR4 / DDR5, compatibilidade</li>
+<li>Overclock / Underclock</li>
+<li>Dual Channel</li>
+<li>Memória virtual, ECC</li>
+</ul>
+</div>
+<div>
+<h3 id="-memória-secundária">💽 Memória Secundária</h3>
+<ul>
+<li>Disco rígido (HD)</li>
+<li>Memória Flash (SSD)</li>
+<li>Mídias óticas</li>
+<li>Nuvem</li>
+<li>Segurança e backup</li>
+</ul>
+</div>
+</div>
 
 </section>
 </section>
@@ -60,29 +73,28 @@
 
 <section data-shortcode-section>
 <h1 id="hierarquia-de-memórias">Hierarquia de memórias</h1>
-<p><img src="http://4.bp.blogspot.com/-QtWy0lyvRcE/T0Y-Zl78vUI/AAAAAAAAACM/CsqdtP70aJA/s1600/hierarquia.png" alt=""></p>
+<p><img src="/slides-org-mont-memorias/imagens/hierarquia-memoria.png" alt=""></p>
 </section><section>
 <h1 id="registrador">Registrador</h1>
-<p><img src="https://images.tcdn.com.br/img/img_prod/751846/74hc595_ci_registrador_de_deslocamento_1203_1_20201202141219.jpg" alt=""></p>
+<p><img src="/slides-org-mont-memorias/imagens/registrador.jpg" alt=""></p>
+<p>Fica <strong>dentro</strong> do próprio chip da CPU</p>
+</section><section>
+<h1 id="o-que-é-cache">O que é cache?</h1>
+<p>Estratégia de trazer <strong>antecipadamente</strong> dados de uma memória mais lenta para uma mais rápida — apostando que serão pedidos em breve</p>
+<p>Baseada no <strong>princípio da localidade</strong>: ao acessar uma posição de memória, é provável que as posições vizinhas também sejam acessadas logo em seguida</p>
+<ul>
+<li><strong>Cache hit</strong> ✅ — o dado antecipado foi mesmo pedido</li>
+<li><strong>Cache miss</strong> ❌ — o dado não estava lá, precisa buscar na memória mais lenta</li>
+</ul>
 </section><section>
 <h1 id="memória-cache">Memória Cache</h1>
-<p><img src="https://softwareg.com.au/cdn/shop/articles/1_4SZ3hUZHJKCd-mxL2YolQg_d0881479-3b04-4064-824a-5cc1b69e8c66.png?v=1707765732" alt=""></p>
-<p><a href="https://softwareg.com.au/en-gb/blogs/computer-hardware/what-is-a-cpu-cache?srsltid=AfmBOorM2OWbR9JS4bLD6Cw4VqA90rUnt4Y3AA_KFBKcUwahrOEXdKDB">Leitura Complementar</a></p>
+<img src="/slides-org-mont-memorias/imagens/cache-cpu.svg" alt="Hierarquia de cache: Processador → L1 → L2 → L3 → RAM" style="height: 480px; width: auto;">
+<p>Também dentro do chip da CPU (L1/L2/L3) — cada <em>cache miss</em> sobe um nível, até chegar na RAM</p>
+<p><a href="https://en.wikipedia.org/wiki/CPU_cache">Leitura Complementar</a></p>
 </section><section>
-<h1 id="memória-primária">Memória Primária</h1>
-<p>Memória RAM</p>
-<p><img src="http://s2.glbimg.com/pIYWaMUeKXIEpVKCyixehYrvhXc=/695x0/s.glbimg.com/po/tt2/f/original/2016/07/19/memoria-ram-1.jpg" alt=""></p>
-</section><section>
-<h1 id="memória-secundária">Memória Secundária</h1>
-<p>Menor custo/bit do que memórias primárias</p>
-<p>Não volátil</p>
-<p>Exemplos:</p>
-<ul>
-<li>Disco rígido</li>
-<li>Memória Flash</li>
-<li>Mídias óticas</li>
-<li>Nuvem</li>
-</ul>
+<h1 id="heading">?</h1>
+<p>Por que a gente <strong>não faz manutenção</strong> de registrador ou de cache da CPU?</p>
+<p><em>(resposta: trocar a CPU já os substitui — manutenção nesse nível é manutenção de CPU)</em></p>
 </section><section>
 <h1 id="histórico">Histórico</h1>
 <p><a href="https://pplware.sapo.pt/internet/a-historia-do-armazenamento-digital/">Histórico do armazenamento digital</a></p>
@@ -96,12 +108,14 @@
 <h1 id="memória-primária">Memória Primária</h1>
 </section><section>
 <h1 id="memória-ram">Memória RAM</h1>
+<p><img src="/slides-org-mont-memorias/imagens/memoria-ram.jpg" alt=""></p>
 </section><section>
 <h1 id="célula-de-memória">Célula de memória</h1>
 <p>Capaz de armazenar 1 bit</p>
 <p>Capacitores, transistores</p>
 <p>Flip-flops</p>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/DRAM_Cell_Structure_%28Model_of_Single_Circuit_Cell%29.PNG/220px-DRAM_Cell_Structure_%28Model_of_Single_Circuit_Cell%29.PNG" alt=""></p>
+<p><img src="/slides-org-mont-memorias/imagens/dram-cell-structure.png" alt=""></p>
+<p><strong>Princípio do capítulo:</strong> velocidade, custo, volatilidade e durabilidade não são arbitrários — decorrem diretamente da natureza física da célula</p>
 </section><section>
 <p><strong>Célula de memória</strong></p>
 <p>Ctrl + C</p>
@@ -109,8 +123,8 @@
 <p><em>Memória</em></p>
 </section><section>
 <h1 id="timeline">Timeline</h1>
-<p>Static <strong>RAM</strong> -&gt; SRAM (1963-1995)</p>
-<p>Dynamic <strong>RAM</strong> -&gt; DRAM (1965-2001)</p>
+<p>Static <strong>RAM</strong> -&gt; SRAM: sempre restrita a cache (nunca foi memória principal de propósito geral)</p>
+<p>Dynamic <strong>RAM</strong> -&gt; DRAM: dominante como memória principal desde o início dos anos 1970</p>
 <p>inclusão da operação de <em>refresh</em></p>
 </section><section>
 <h2 id="sram-static-ram">SRAM (Static RAM)</h2>
@@ -134,7 +148,7 @@
 </ul>
 </section><section>
 <p>Relembrando conceito de densidade</p>
-<p><img src="https://aredeurbana.com.br/wp-content/uploads/2022/02/dens_mun_2021.png" alt=""></p>
+<p><img src="/slides-org-mont-memorias/imagens/densidade-populacional.png" alt=""></p>
 </section><section>
 <h2 id="sdram-synchronous-dram">SDRAM (Synchronous DRAM)</h2>
 <ul>
@@ -146,12 +160,12 @@
 <li><strong>Desvantagem:</strong> Maior consumo e complexidade</li>
 </ul>
 </section><section>
-<p>Syncronous Dynamic <strong>RAM</strong>-&gt; SDRAM (1992-2018) <em>clock</em></p>
+<p>Syncronous Dynamic <strong>RAM</strong>-&gt; SDRAM (desde 1992, geração <em>clock</em>) — ainda dominante hoje</p>
 <ul>
 <li>DDR, DDR2, DDR3, DDR4, DDR5</li>
 </ul>
 </section><section>
-<p><img src="https://upload.wikimedia.org/wikipedia/en/2/26/Daft_Punk_-_Random_Access_Memories.png" alt=""></p>
+<p><img src="/slides-org-mont-memorias/imagens/daft-punk-ram.png" alt=""></p>
 <p>Memória RAM (Random Access Memory)</p>
 <p>Memória de acesso aleatório</p>
 <p><a href="https://en.wikipedia.org/wiki/Random-access_memory">Leitura complementar</a></p>
@@ -268,15 +282,34 @@
 </li>
 </ul>
 </section><section>
+<h1 id="overclock-x-underclock">Overclock x Underclock</h1>
+<p><strong>Overclock</strong>: sobrecarregar a frequência de trabalho acima da especificação nominal</p>
+<p><strong>Underclock</strong>: reduzir a frequência de trabalho abaixo da especificação</p>
+</section><section>
+<h1 id="a-tríade-memóriaplaca-mãeprocessador">A tríade memória–placa-mãe–processador</h1>
+<p>A frequência de trabalho da RAM <strong>não é isolada</strong> — precisa estar compatibilizada com placa-mãe e processador</p>
+<p>Se a memória suporta frequência maior do que a dupla placa-mãe/processador sustenta, o sistema faz <strong>underclock automático</strong> de todo o conjunto</p>
+<p><strong>Nota prática:</strong> computador travando com frequência? Pode ser memória configurada acima do que a combinação placa-mãe/processador suporta — underclock manual costuma resolver, com perda de desempenho geralmente irrelevante</p>
+</section><section>
 <h1 id="compatibilidade">Compatibilidade</h1>
 <p>Diferenças de tensão e pinagem</p>
-<p><img src="https://www.dicasnainternet.com.br/wp-content/uploads/2014/10/ddr_ddr2_ddr3.png" alt=""></p>
+<p><img src="/slides-org-mont-memorias/imagens/ddr-compatibilidade.png" alt=""></p>
+</section><section>
+<h1 id="o-chanfro">O chanfro</h1>
+<p>Entalhe posicionado em ponto específico do conector — muda a cada geração DDR</p>
+<p>Slot da placa-mãe só encaixa o chanfro <strong>daquela geração</strong></p>
+<p>Não é diferença de tamanho físico (todos os módulos DIMM de desktop são praticamente idênticos) — é só a posição do chanfro</p>
+<p><strong>Nota prática:</strong> sentiu que está fazendo força para encaixar? Pare — nenhum componente deve exigir força</p>
+</section><section>
+<h1 id="notebook-x-desktop">Notebook x Desktop</h1>
+<p>Memórias de notebook são fisicamente <strong>menores</strong> (economia de espaço)</p>
+<p>Um desktop pode, em certos casos, usar memória de notebook — o inverso nunca é possível</p>
 </section><section>
 <h1 id="dd3-vs-ddr4">DD3 vs DDR4</h1>
-<p><img src="https://www.oficinadanet.com.br/imagens/post/26735/compare_ddr3_ddr4.jpg" alt=""></p>
+<p><img src="/slides-org-mont-memorias/imagens/ddr3-vs-ddr4.jpg" alt=""></p>
 </section><section>
 <h1 id="ddr4-vs-ddr5">DDR4 vs DDR5</h1>
-<p><img src="https://media.kingston.com/kingston/content/ktc-content-ddr5-overview-difference.jpg" alt=""></p>
+<p><img src="/slides-org-mont-memorias/imagens/ddr4-vs-ddr5.jpg" alt=""></p>
 </section><section>
 <h1 id="tabela-comparativa">Tabela comparativa</h1>
 <table>
@@ -324,6 +357,13 @@
 <p>Escrita e leitura de dados em duas memórias para acelerar acesso.</p>
 <p>Semelhante a estratégia do RAID 0</p>
 </section><section>
+<h1 id="exemplo-numérico">Exemplo numérico</h1>
+<p>Arquivo de 100 MB, memória a 10 MB/s</p>
+<ul>
+<li>1 módulo: 100MB ÷ 10MB/s = <strong>10 segundos</strong></li>
+<li>2 módulos (<em>striping</em>, 50MB cada, em paralelo): <strong>5 segundos</strong></li>
+</ul>
+</section><section>
 <p>Cenário ideal: Pares de memórias idênticas</p>
 <p>Conferir manual da placa (slots apropriados)</p>
 <p><a href="https://www.cpuid.com/softwares/cpu-z.html">Software CPU-z (conferência)</a></p>
@@ -331,7 +371,7 @@
 <h1 id="flex-mode">Flex mode</h1>
 <p>Dual channel com tamanhos de memória diferentes</p>
 <p>Frequência de trabalho limitada pela menor velocidade do conjunto de módulos</p>
-<p><a href="https://www.intel.com.br/content/www/br/pt/support/articles/000005657/boards-and-kits.html">Leitura complementar</a></p>
+<p><a href="https://www.makeuseof.com/what-is-ram-flex-mode-how-does-it-work/">Leitura complementar</a></p>
 </section><section>
 <h1 id="fator-econômico">Fator econômico</h1>
 <p><a href="https://www.kabum.com.br/hardware/memoria-ram">Link loja</a></p>
@@ -341,29 +381,55 @@
 </section><section>
 <h1 id="memória-virtual">Memória Virtual</h1>
 <p>Paginação</p>
-<p>Memória Flash como memória virtual</p>
 <p>SWAP</p>
-<p>SSD vs HD</p>
+<p><em>(usa memória secundária — HD/SSD/Flash — como extensão da RAM; a próxima seção vê cada uma em detalhe)</em></p>
+</section><section>
+<h1 id="causo-real">Causo real</h1>
+<p>Programa de linguagem natural: 16GB não rodou → 32GB não rodou → 64GB não rodou → computador dedicado com <strong>128GB de RAM</strong></p>
+<p>Mesmo assim, usou ~210GB no pico (128GB RAM + ~82GB de swap em SSD)</p>
+</section><section>
+<h1 id="heading-1">?</h1>
+<p>Havia uma forma de resolver isso sem gastar um centavo a mais?</p>
+<p><em>(configurar um SSD ocioso inteiro como área de swap — mais lento, mas sem comprar hardware novo)</em></p>
+</section><section>
+<h1 id="nota-prática">Nota prática</h1>
+<p>Notebooks modernos com RAM soldada e reduzida dependem fortemente de swap sobre a própria memória flash — desgasta a célula flash ao longo dos anos e não pode ser substituída isoladamente</p>
+<p><em>(por que a flash desgasta? você vai ver o motivo físico exato na seção de Memória Flash)</em></p>
 
 </section>
 </section>
     <section>
 
 <section data-shortcode-section>
+<h1 id="memória-secundária">Memória Secundária</h1>
+<p>Menor custo/bit do que memórias primárias</p>
+<p>Não volátil</p>
+<p>Exemplos:</p>
+<ul>
+<li>Disco rígido</li>
+<li>Memória Flash</li>
+<li>Mídias óticas</li>
+<li>Nuvem</li>
+</ul>
+</section><section>
 <h1 id="disco-rígido">Disco Rígido</h1>
 <p>Importante: Partes móveis</p>
-<p><img src="http://s.glbimg.com/po/tt/f/original/2012/03/05/ilustracao.jpg" alt=""></p>
+<p><img src="/slides-org-mont-memorias/imagens/hd-ilustracao.jpg" alt=""></p>
 </section><section>
 <h1 id="natureza-magnética">Natureza magnética</h1>
 <p>Hard disk (HD)</p>
-<p><img src="https://www.computerhope.com/jargon/m/magnetic-media.png" alt=""></p>
+<p><img src="/slides-org-mont-memorias/imagens/hd-midia-magnetica.png" alt=""></p>
 <p><a href="https://www.computerhope.com/jargon/m/magnmedi.htm">Leitura complementar</a></p>
 </section><section>
 <h1 id="endereço-do-dado">Endereço do dado</h1>
 <p>Discos, Faces, Trilhas, Setores</p>
 <p>Acesso <strong>sequencial</strong>!</p>
 </section><section>
-<p><img src="https://www.minitool.com/images/uploads/lib/2019/06/cluster/cluster-1.png" alt=""></p>
+<p><img src="/slides-org-mont-memorias/imagens/cluster.png" alt=""></p>
+<p><strong>Cluster</strong> = unidade mínima de alocação — como uma gaveta de tamanho fixo</p>
+<p><strong>Exemplo:</strong> arquivo .txt só com a letra &ldquo;J&rdquo; (8 bits em ASCII) → ocupa um cluster inteiro (NTFS: 4 KB padrão), não os 8 bits reais</p>
+<p><strong>Atenção:</strong> um .docx equivalente ocupa vários KB a mais que isso — mas essa diferença extra vem do próprio formato do arquivo (contêiner ZIP/XML), não do tamanho do cluster. São dois fenômenos distintos, não confundir</p>
+<p>Trade-off: cluster maior = menos endereçamento, mais desperdício em arquivo pequeno</p>
 </section><section>
 <h1 id="unidade-de-armazenamento">Unidade de armazenamento</h1>
 <p>O que é usado na arquitetura do computador x O que é usado pelos fabricantes (sistema internacional de medidas)</p>
@@ -419,11 +485,14 @@
 <p>Entendendo melhor de onde vem as características desse tipo de memória</p>
 </section><section>
 <p><img src="/slides-org-mont-memorias/imagens/mosfet.jpeg" alt="mosfet"></p>
+<p>MOSFET com <strong>porta flutuante</strong> (floating gate) — elétrons retidos entre duas camadas de óxido isolante (analogia: sanduíche, elétrons = recheio)</p>
+<p>Presença/ausência de elétrons na porta flutuante = bit 0 ou 1</p>
 </section><section>
 <h1 id="onde-são-usadas">Onde são usadas?</h1>
 <p>Substituição de ROMs (Placa mãe, microcontroladores, dispositivos embarcados)</p>
 <p>Dispositivos portáteis (pendrive, Flashdrive, Armazenamento externo)</p>
 <p>SSD (Solid State Disk)</p>
+<p><em>Curiosidade:</em> um SSD também tem uma pequena DRAM interna, usada como cache dos blocos mais recentemente acessados</p>
 
 </section>
 </section>
@@ -431,13 +500,35 @@
 
 <section data-shortcode-section>
 <h1 id="mídias-óticas">Mídias óticas</h1>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Comparison_CD_DVD_HDDVD_BD.svg/1024px-Comparison_CD_DVD_HDDVD_BD.svg.png" alt=""></p>
+<p><img src="/slides-org-mont-memorias/imagens/comparativo-cd-dvd-bd.svg" alt=""></p>
 </section><section>
 <h1 id="características">Características</h1>
 <p>Diferentes tecnologias</p>
 <p>Capacidade de Armazenamento</p>
 <p>Velocidade</p>
 <p>ROM, R, RW</p>
+</section><section>
+<h1 id="célula-de-memória">Célula de memória</h1>
+<p>Ponto da superfície que <strong>reflete ou não reflete</strong> um laser</p>
+<p>Traço longo/curto = bit 1 ou 0</p>
+<p><strong>Não confundir com vinil:</strong> vinil é <strong>analógico</strong> (sulco reproduz a onda sonora); CD é <strong>digital</strong> (cada ponto = 0 ou 1)</p>
+</section><section>
+<h1 id="acesso-sequencial">Acesso sequencial</h1>
+<p>Assim como o HD: leitura começa perto do centro e segue radialmente para fora</p>
+<p><em>(por isso gravar só metade de um CD deixa visível a área gravada x não gravada)</em></p>
+</section><section>
+<h1 id="cd--dvd--blu-ray">CD → DVD → Blu-ray</h1>
+<p>Evolução = reduzir o tamanho físico de cada célula → mais dados no mesmo espaço</p>
+<p>Exige laser de comprimento de onda <strong>menor</strong>:</p>
+<ul>
+<li>CD: infravermelho (~780 nm)</li>
+<li>DVD: vermelho (~650 nm)</li>
+<li>Blu-ray: azul (daí o nome) — o mais curto dos três</li>
+</ul>
+</section><section>
+<h1 id="heading">?</h1>
+<p>Por que um CD arranhado para de funcionar, mas um HD (também sensível) não sofre o mesmo em uso normal?</p>
+<p><em>(HD é lacrado hermeticamente; a superfície de leitura do CD fica exposta)</em></p>
 
 </section>
 </section>
@@ -448,10 +539,126 @@
 <p>O que é armazenamento na nuvem?</p>
 <p>Tecnologias envolvidas?</p>
 </section><section>
+<h1 id="heading">?</h1>
+<p>Nuvem é um novo tipo de célula de memória?</p>
+<p><em>(não! é um computador remoto — armazenando com as mesmas tecnologias já vistas, predominantemente HD e SSD, dentro da própria pirâmide de hierarquia de memória)</em></p>
+<p>Réplicas em servidores fisicamente distribuídos → mais confiabilidade, às vezes menor velocidade</p>
+</section><section>
 <h1 id="preços">Preços</h1>
 <p><a href="https://one.google.com/storage">Google drive</a></p>
 <p><a href="https://www.microsoft.com/pt-br/microsoft-365/onedrive/compare-onedrive-plans?activetab=tab%3aprimaryr1">One drive</a></p>
 <p><a href="https://www.dropbox.com/pt_BR/individual/plans-comparison">Dropbox</a></p>
+
+</section>
+</section>
+    <section>
+
+<section data-shortcode-section>
+<h1 id="memória-unificada">Memória Unificada</h1>
+<p>Uma arquitetura, uma tendência — CPU, GPU e NPU compartilhando o mesmo pool físico de memória</p>
+</section><section>
+<h1 id="o-que-é">O que é?</h1>
+<p>Alternativa ao Dual Channel: em vez de multiplicar canais, aproxima a memória fisicamente do processador</p>
+<p>Chips de memória dentro do mesmo encapsulamento do chip, compartilhados entre CPU, GPU (e NPU)</p>
+<p>✅ Menor latência, sem cópia entre memórias de CPU/GPU</p>
+<p>❌ Memória soldada — não é mais substituível/upgradável pelo usuário</p>
+</section><section>
+<h1 id="uma-tendência-não-só-a-apple">Uma tendência, não só a Apple</h1>
+<p>Toda a indústria (Apple, AMD, NVIDIA) está apostando em memória unificada para acelerar IA local — a banda de memória só cresce:</p>
+<div style="font-size:0.62em;">
+<table>
+  <thead>
+      <tr>
+          <th>Sistema (ano)</th>
+          <th>Memória</th>
+          <th>Banda</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Desktop DDR5 Dual Channel</td>
+          <td>módulos, GBs</td>
+          <td>~100 GB/s</td>
+      </tr>
+      <tr>
+          <td>Apple M1 (2020)</td>
+          <td>até 16GB</td>
+          <td>68 GB/s</td>
+      </tr>
+      <tr>
+          <td>Apple M1 Ultra (2022)</td>
+          <td>até 128GB</td>
+          <td>800 GB/s</td>
+      </tr>
+      <tr>
+          <td>AMD Ryzen AI Max+ 395 (2025)</td>
+          <td>até 128GB</td>
+          <td>~256 GB/s</td>
+      </tr>
+      <tr>
+          <td>NVIDIA DGX Spark (2025)</td>
+          <td>128GB</td>
+          <td>273 GB/s</td>
+      </tr>
+      <tr>
+          <td>Apple M5 Max (2026)</td>
+          <td>até 128GB</td>
+          <td>614 GB/s</td>
+      </tr>
+      <tr>
+          <td><strong>Apple M5 Ultra (2026)</strong></td>
+          <td>até <strong>512GB</strong></td>
+          <td><strong>1,2 TB/s</strong></td>
+      </tr>
+  </tbody>
+</table>
+</div>
+</section><section>
+<h1 id="mas-atenção">Mas atenção</h1>
+<p>Mesmo assim, memória unificada ainda perde em banda bruta para a <strong>VRAM dedicada</strong> de uma GPU discreta (1000+ GB/s)</p>
+<p>O ganho real é <strong>eliminar a cópia de dados</strong> entre CPU e GPU — não superar uma GPU de ponta em banda</p>
+</section><section>
+<h1 id="nvidia-dgx-spark">NVIDIA DGX Spark</h1>
+<p>&ldquo;Supercomputador de IA pessoal&rdquo; — cabe na palma da mão</p>
+<p>Chip: <strong>Grace Blackwell</strong> (Superchip: CPU ARM + GPU Blackwell no mesmo encapsulamento)</p>
+<p>128GB de LPDDR5x unificada · barramento de 256 bits · 273 GB/s — CPU e GPU acessam o mesmo pool de memória</p>
+<p>Objetivo: treinar/rodar modelos de IA localmente, sem depender de nuvem</p>
+</section><section>
+<h1 id="amd-ryzen-ai-max-strix-halo">AMD Ryzen AI Max (Strix Halo)</h1>
+<p>Chip usado no <strong>Framework Desktop</strong> (mini PC modular, não um SoC fechado — é x86 tradicional)</p>
+<p>Ryzen AI Max+ 395: CPU (Zen 5) + GPU (RDNA 3.5) + NPU compartilhando até 128GB de LPDDR5X-8000 unificada (barramento de 256 bits, ~256 GB/s)</p>
+<p>Mesma ideia da Apple e da NVIDIA, aplicada a um PC Windows/Linux comum</p>
+</section><section>
+<h1 id="heading">?</h1>
+<p>O que isso significa para manutenção?</p>
+<p><em>(memória soldada = sem upgrade, sem troca de módulo isolado — &ldquo;consertar&rdquo; RAM insuficiente nessas máquinas é trocar o equipamento inteiro)</em></p>
+
+</section>
+</section>
+    <section>
+
+<section data-shortcode-section>
+<h1 id="servidores">Servidores</h1>
+<p>Qual a grande diferença entre um servidor e um desktop ou um laptop?</p>
+</section><section>
+<h1 id="redundância">Redundância!</h1>
+</section><section>
+<p>Aspectos relacionados a memória</p>
+</section><section>
+<h1 id="ecc-error-correcting-code">ECC (Error-Correcting Code)</h1>
+<p>Tipo de RAM capaz de <strong>detectar e corrigir</strong> automaticamente um erro de 1 bit por palavra de memória</p>
+<p>Usa bits extras de paridade/verificação gravados junto com o dado</p>
+<p>Uso: <strong>servidores</strong> (24h/dia, centenas de GB de RAM) — praticamente ausente em desktops/notebooks</p>
+</section><section>
+<h1 id="bit-flip">Bit flip</h1>
+<p>Inversão espontânea do valor de uma célula (0 vira 1, ou vice-versa) <strong>sem dano físico permanente</strong></p>
+<p>Duas causas (radiação ionizante):</p>
+<ul>
+<li>Raios cósmicos secundários (nêutrons)</li>
+<li>Partículas alfa de contaminantes radioativos no próprio encapsulamento do chip</li>
+</ul>
+<p>Quanto menor o chip e maior a quantidade de memória, maior a probabilidade de bit flip</p>
+<p><a href="https://en.wikipedia.org/wiki/Soft_error">Leitura complementar</a></p>
 
 </section>
 </section>
@@ -475,6 +682,22 @@
 <h1 id="backup">Backup</h1>
 <p>Mídias de natureza diferente</p>
 <p>Localização física diferente</p>
+</section><section>
+<h1 id="causo-real">Causo real</h1>
+<p>Estudante mantinha backup da dissertação no laptop, num HD externo e num pendrive — <strong>3 mídias diferentes</strong></p>
+<p>Mas os 3 estavam na mesma mochila, que foi roubada. Perdeu tudo.</p>
+<p><em>Diversidade de mídia não basta — precisa de diversidade de <strong>localização</strong> também</em></p>
+</section><section>
+<h1 id="quiz-final">Quiz final</h1>
+<p>Bit flip (Seção de Memória Primária) é o mesmo problema que um HD perto de um ímã forte?</p>
+</section><section>
+<h1 id="resposta">Resposta</h1>
+<p><strong>Não</strong> — mecanismos físicos diferentes:</p>
+<ul>
+<li><strong>HD</strong>: perde dado por <strong>magnetização</strong> externa de uma região do prato</li>
+<li><strong>RAM (bit flip)</strong>: perde dado por <strong>radiação ionizante</strong> (raios cósmicos, partículas alfa) perturbando a carga elétrica (DRAM) ou o estado lógico de um circuito (SRAM)</li>
+</ul>
+<p>Duas ameaças, dois mecanismos — não confundir</p>
 
 </section>
 </section>
