@@ -30,17 +30,8 @@
 <p>Conhecer as diversas tecnologias relacionadas a natureza das memórias para provê o correto uso e especificação</p>
 </section><section>
 <h1 id="índice">Índice</h1>
-<p>Toda memória se encaixa numa pirâmide de hierarquia — três frentes:</p>
+<p>Toda memória se encaixa numa pirâmide de hierarquia</p>
 <div style="display:flex; justify-content:space-around; text-align:left; font-size:0.55em; gap:1.5em; margin-top:1em;">
-<div>
-<h3 id="-memória-unificada">🚀 Memória Unificada</h3>
-<p><em>(destaque desta turma)</em></p>
-<ul>
-<li>Tendência: Apple, AMD, NVIDIA</li>
-<li>Largura de banda</li>
-<li>DGX Spark, Strix Halo</li>
-</ul>
-</div>
 <div>
 <h3 id="-memória-primária">💾 Memória Primária</h3>
 <ul>
@@ -49,6 +40,7 @@
 <li>Overclock / Underclock</li>
 <li>Dual Channel</li>
 <li>Memória virtual, ECC</li>
+<li>Memória Unificada</li>
 </ul>
 </div>
 <div>
@@ -111,6 +103,7 @@
 <p>Capacitores, transistores</p>
 <p>Flip-flops</p>
 <p><img src="/slides-org-mont-memorias/imagens/dram-cell-structure.png" alt=""></p>
+</section><section>
 <p><strong>Princípio do capítulo:</strong> velocidade, custo, volatilidade e durabilidade não são arbitrários — decorrem diretamente da natureza física da célula</p>
 </section><section>
 <p><strong>Célula de memória</strong></p>
@@ -143,9 +136,6 @@
 <li><strong>Desvantagem:</strong> Necessita atualização constante e é mais lenta</li>
 </ul>
 </section><section>
-<p>Relembrando conceito de densidade</p>
-<p><img src="/slides-org-mont-memorias/imagens/densidade-populacional.png" alt=""></p>
-</section><section>
 <h2 id="sdram-synchronous-dram">SDRAM (Synchronous DRAM)</h2>
 <ul>
 <li><strong>Significa:</strong> Memória RAM Dinâmica Sincronizada</li>
@@ -175,6 +165,11 @@
 <p>Alto preço</p>
 <p>Volátil</p>
 </section><section>
+<p>Passar do tempo -&gt; aumento da densidade das memórias</p>
+</section><section>
+<p>Relembrando conceito de densidade</p>
+<p><img src="/slides-org-mont-memorias/imagens/densidade-populacional.png" alt=""></p>
+</section><section>
 <h2 id="-resumo-comparativo">🧩 Resumo Comparativo</h2>
 <table>
   <thead>
@@ -189,35 +184,35 @@
   <tbody>
       <tr>
           <td><strong>ROM</strong></td>
-          <td>❌</td>
+          <td>Não</td>
           <td>Baixa</td>
-          <td>💰 Baixo</td>
+          <td>Baixo</td>
           <td>Armazenar firmware</td>
       </tr>
       <tr>
           <td><strong>SRAM</strong></td>
-          <td>✅</td>
-          <td>🔥 Muito alta</td>
-          <td>💎 Alto</td>
+          <td>Sim</td>
+          <td>Muito alta</td>
+          <td>Alto</td>
           <td>Cache de CPU</td>
       </tr>
       <tr>
           <td><strong>DRAM</strong></td>
-          <td>✅</td>
+          <td>Sim</td>
           <td>Média</td>
-          <td>🪙 Médio</td>
+          <td>Médio</td>
           <td>Memória principal</td>
       </tr>
       <tr>
           <td><strong>SDRAM</strong></td>
-          <td>✅</td>
+          <td>Sim</td>
           <td>Alta</td>
-          <td>🪙 Médio</td>
+          <td>Médio</td>
           <td>RAM de PCs modernos</td>
       </tr>
       <tr>
           <td><strong>RAM (geral)</strong></td>
-          <td>✅</td>
+          <td>Sim</td>
           <td>Alta</td>
           <td>Variável</td>
           <td>Armazenamento temporário</td>
@@ -387,10 +382,6 @@
 <h1 id="heading-1">?</h1>
 <p>Havia uma forma de resolver isso sem gastar um centavo a mais?</p>
 <p><em>(configurar um SSD ocioso inteiro como área de swap — mais lento, mas sem comprar hardware novo)</em></p>
-</section><section>
-<h1 id="nota-prática">Nota prática</h1>
-<p>Notebooks modernos com RAM soldada e reduzida dependem fortemente de swap sobre a própria memória flash — desgasta a célula flash ao longo dos anos e não pode ser substituída isoladamente</p>
-<p><em>(por que a flash desgasta? você vai ver o motivo físico exato na seção de Memória Flash)</em></p>
 
 </section>
 </section>
@@ -481,7 +472,7 @@
 <p>Entendendo melhor de onde vem as características desse tipo de memória</p>
 </section><section>
 <p><img src="/slides-org-mont-memorias/imagens/mosfet.jpeg" alt="mosfet"></p>
-<p>MOSFET com <strong>porta flutuante</strong> (floating gate) — elétrons retidos entre duas camadas de óxido isolante (analogia: sanduíche, elétrons = recheio)</p>
+<p>MOSFET com <strong>porta flutuante</strong> (floating gate) — elétrons retidos entre duas camadas de óxido isolante</p>
 <p>Presença/ausência de elétrons na porta flutuante = bit 0 ou 1</p>
 </section><section>
 <h1 id="onde-são-usadas">Onde são usadas?</h1>
@@ -550,14 +541,45 @@
     <section>
 
 <section data-shortcode-section>
+<h1 id="novidades-e-tendências">Novidades e tendências</h1>
+</section><section>
+<h1 id="adoção-do-padrão-camm2-em-desktops">Adoção do padrão CAMM2 em desktops</h1>
+<ul>
+<li>Fixação plana e aparafusada</li>
+<li>Trilhas elétricas mais curtas</li>
+<li>Dual channel em módulo único</li>
+</ul>
+</section><section>
+<h1 id="análise-de-situação">Análise de situação</h1>
+</section><section>
+<p>Combinação:</p>
+<ul>
+<li>Memória RAM com preços altos</li>
+<li>Laptops vendidos com pouca memória RAM para conter custos</li>
+<li>Fabricantes optando por soldar o chip de memória RAM</li>
+</ul>
+</section><section>
+<h1 id="você-consegue-ver-o-problema">Você consegue ver o problema?</h1>
+</section><section>
+<p>Notebooks modernos com RAM soldada e reduzida dependem fortemente de swap sobre a própria memória flash — desgasta a célula flash ao longo dos anos e não pode ser substituída isoladamente</p>
+</section><section>
+<h1 id="framework-laptop-13">Framework laptop 13</h1>
+<p><img src="/slides-org-mont-memorias/imagens/framework-ram.jpeg" alt=""></p>
+</section><section>
 <h1 id="memória-unificada">Memória Unificada</h1>
 <p>Uma arquitetura, uma tendência — CPU, GPU e NPU compartilhando o mesmo pool físico de memória</p>
 </section><section>
 <h1 id="o-que-é">O que é?</h1>
 <p>Alternativa ao Dual Channel: em vez de multiplicar canais, aproxima a memória fisicamente do processador</p>
 <p>Chips de memória dentro do mesmo encapsulamento do chip, compartilhados entre CPU, GPU (e NPU)</p>
-<p>✅ Menor latência, sem cópia entre memórias de CPU/GPU</p>
-<p>❌ Memória soldada — não é mais substituível/upgradável pelo usuário</p>
+<ul>
+<li>
+<p>Menor latência, sem cópia entre memórias de CPU/GPU</p>
+</li>
+<li>
+<p>Memória soldada — não é mais substituível/upgradável pelo usuário</p>
+</li>
+</ul>
 </section><section>
 <h1 id="uma-tendência-não-só-a-apple">Uma tendência, não só a Apple</h1>
 <p>Toda a indústria (Apple, AMD, NVIDIA) está apostando em memória unificada para acelerar IA local — a banda de memória só cresce:</p>
