@@ -65,7 +65,7 @@
 
 <section data-shortcode-section>
 <h1 id="hierarquia-de-memórias">Hierarquia de memórias</h1>
-<p><img src="/slides-org-mont-memorias/imagens/hierarquia-memoria.png" alt=""></p>
+<p><img src="/slides-org-mont-memorias/imagens/piramide-memoria.png" alt=""></p>
 </section><section>
 <h1 id="registrador">Registrador</h1>
 <p><img src="/slides-org-mont-memorias/imagens/registrador.jpg" alt=""></p>
@@ -80,7 +80,7 @@
 </ul>
 </section><section>
 <h1 id="memória-cache">Memória Cache</h1>
-<img src="/slides-org-mont-memorias/imagens/cache-cpu.svg" alt="Hierarquia de cache: Processador → L1 → L2 → L3 → RAM" style="height: 480px; width: auto;">
+<img src="/slides-org-mont-memorias/imagens/cache-hierarquia.png" alt="Hierarquia de cache: Processador → L1 → L2 → L3 → RAM" style="height: 480px; width: auto;">
 <p>Também dentro do chip da CPU (L1/L2/L3) — cada <em>cache miss</em> sobe um nível, até chegar na RAM</p>
 <p><a href="https://en.wikipedia.org/wiki/CPU_cache">Leitura Complementar</a></p>
 </section><section>
@@ -109,6 +109,9 @@
 <p><img src="/slides-org-mont-memorias/imagens/dram-cell-structure.png" alt=""></p>
 </section><section>
 <p><strong>Princípio do capítulo:</strong> velocidade, custo, volatilidade e durabilidade não são arbitrários — decorrem diretamente da natureza física da célula</p>
+</section><section>
+<h1 id="as-quatro-células-de-memória">As quatro células de memória</h1>
+<p><img src="/slides-org-mont-memorias/imagens/quatro-celulas.png" alt=""></p>
 </section><section>
 <p><strong>Célula de memória</strong></p>
 <p>Ctrl + C</p>
@@ -301,7 +304,7 @@
 <p>Um desktop pode, em certos casos, usar memória de notebook — o inverso nunca é possível</p>
 </section><section>
 <h1 id="dd3-vs-ddr4">DD3 vs DDR4</h1>
-<p><img src="/slides-org-mont-memorias/imagens/ddr3-vs-ddr4.jpg" alt=""></p>
+<p><img src="/slides-org-mont-memorias/imagens/ddr3-ddr4-chanfro.png" alt=""></p>
 </section><section>
 <h1 id="ddr4-vs-ddr5">DDR4 vs DDR5</h1>
 <p><img src="/slides-org-mont-memorias/imagens/ddr4-vs-ddr5.jpg" alt=""></p>
@@ -416,7 +419,7 @@
 <p>Discos, Faces, Trilhas, Setores</p>
 <p>Acesso <strong>sequencial</strong>!</p>
 </section><section>
-<p><img src="/slides-org-mont-memorias/imagens/cluster.png" alt=""></p>
+<p><img src="/slides-org-mont-memorias/imagens/disco-trilha-setor.png" alt=""></p>
 <p><strong>Cluster</strong> = unidade mínima de alocação — como uma gaveta de tamanho fixo</p>
 <p><strong>Exemplo:</strong> arquivo .txt só com a letra &ldquo;J&rdquo; (8 bits em ASCII) → ocupa um cluster inteiro (NTFS: 4 KB padrão), não os 8 bits reais</p>
 <p><strong>Atenção:</strong> um .docx equivalente ocupa vários KB a mais que isso — mas essa diferença extra vem do próprio formato do arquivo (contêiner ZIP/XML), não do tamanho do cluster. São dois fenômenos distintos, não confundir</p>
@@ -475,9 +478,9 @@
 </section><section>
 <p>Entendendo melhor de onde vem as características desse tipo de memória</p>
 </section><section>
-<p><img src="/slides-org-mont-memorias/imagens/mosfet.jpeg" alt="mosfet"></p>
+<p><img src="/slides-org-mont-memorias/imagens/mosfet-porta-flutuante.png" alt="mosfet"></p>
 <p>MOSFET com <strong>porta flutuante</strong> (floating gate) — elétrons retidos entre duas camadas de óxido isolante</p>
-<p>Presença/ausência de elétrons na porta flutuante = bit 0 ou 1</p>
+<p>Com elétrons presos na porta flutuante = 0 (programada); sem elétrons = 1 (apagada)</p>
 </section><section>
 <h1 id="onde-são-usadas">Onde são usadas?</h1>
 <p>Substituição de ROMs (Placa mãe, microcontroladores, dispositivos embarcados)</p>
